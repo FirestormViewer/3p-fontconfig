@@ -68,6 +68,8 @@ pushd "$FONTCONFIG_SOURCE_DIR"
                 export CPPFLAGS="$TARGET_CPPFLAGS" 
             fi
 
+	    autoreconf
+
             # Fontconfig is a strange one.  We use it in the Linux build and we ship it
             # but we ship the .so in a way that it isn't used in an installation.  Worse,
             # a casual build can export other libraries and we don't want that.  So,
