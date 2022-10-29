@@ -76,16 +76,16 @@
             <key>archive</key>
             <map>
               <key>hash</key>
-              <string>b5a01290bda70629773141440aa6db6f</string>
+              <string>41db760508e6b48ae3a291ad2d1aef3d</string>
               <key>url</key>
-              <string>http://3p.firestormviewer.org/freetype-2.8.1.223020711-linux64-223020711.tar.bz2</string>
+              <string>http://3p.firestormviewer.org/freetype-2.8.1.223020901-linux64-223020901.tar.bz2</string>
             </map>
             <key>name</key>
             <string>linux64</string>
           </map>
         </map>
         <key>version</key>
-        <string>2.8.1.223020711</string>
+        <string>2.8.1.223020901</string>
       </map>
       <key>zlib-ng</key>
       <map>
