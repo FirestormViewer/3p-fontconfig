@@ -85,6 +85,9 @@ pushd "$FONTCONFIG_SOURCE_DIR"
             # Make-time LDFLAGS adds an --exclude-libs option to prevent
             # re-export of archive symbols.
 
+	    export FREETYPE_CFLAGS="-I$stage/packages/include/freetype2 -I$stage/packages/include"
+	    export FREETYPE_LIBS="-L$stage/packages/lib/release/lib -lfreetype"
+
             CFLAGS="$opts" \
                 CXXFLAGS="$opts" \
                 LDFLAGS="$opts -L$stage/packages/lib/release/" \
