@@ -1,15 +1,14 @@
+# -*- encoding: utf-8 -*-
 #
-# $Id $
-#
-# Copyright © 2003 Keith Packard
+# Copyright © 2003  Keith Packard
 #
 # Permission to use, copy, modify, distribute, and sell this software and its
 # documentation for any purpose is hereby granted without fee, provided that
 # the above copyright notice appear in all copies and that both that
 # copyright notice and this permission notice appear in supporting
-# documentation, and that the name of Keith Packard not be used in
+# documentation, and that the name of the author(s) not be used in
 # advertising or publicity pertaining to distribution of the software without
-# specific, written prior permission.  Keith Packard makes no
+# specific, written prior permission.  The authors make no
 # representations about the suitability of this software for any purpose.  It
 # is provided "as is" without express or implied warranty.
 #
@@ -20,35 +19,28 @@
 # DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 # TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 # PERFORMANCE OF THIS SOFTWARE.
-#
 
-CC = @CC_FOR_BUILD@
-EXEEXT = @EXEEXT_FOR_BUILD@
-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+NULL =
+BLANKSPY = fc-blanks.py
+BLANKS_H = fcblanks.h
+TMPL = fcblanks.tmpl.h
+noinst_SCRIPTS = $(BLANKSPY)
+noinst_HEADERS = $(BLANKS_H)
 
-INCLUDES=-I${top_srcdir}/src -I${top_srcdir} $(WARN_CFLAGS)
+$(BLANKS_H): $(TMPL) $(BLANKSPY)
+if HAVE_PYTHON
+	$(AM_V_GEN) $(PYTHON) $(srcdir)/$(BLANKSPY) < $< > $(BLANKS_H).tmp && \
+	mv $(BLANKS_H).tmp $(BLANKS_H) || ($(RM) $(BLANKS_H).tmp && false)
+else
+	@echo "No python installed. please install python to build $(BLANKS_H)."
+	@false
+endif
 
-TMPL=fcarch.tmpl.h
-STMPL=${top_srcdir}/fc-arch/fcarch.tmpl.h
-TARG=fcarch.h
+EXTRA_DIST = 		\
+	$(BLANKSPY)	\
+	$(BLANKS_H)	\
+	$(TMPL)		\
+	$(NULL)
+DISTCLEANFILES = $(BLANKS_H)
 
-ARCHITECTURE=@ARCHITECTURE@
-.PRECIOUS: $(TARG)
-
-noinst_PROGRAMS=fc-arch
-
-EXTRA_DIST=$(TMPL)
-
-$(TARG):fc-arch${EXEEXT} $(STMPL) ${top_srcdir}/src/fcint.h ../config.h
-	$(AM_V_GEN) $(RM) $(TARG); \
-	./fc-arch${EXEEXT} $(ARCHITECTURE) < $(STMPL) > $(TARG).tmp && \
-	mv $(TARG).tmp $(TARG)
-
-ALIAS_FILES = fcalias.h fcaliastail.h
-
-BUILT_SOURCES = $(ALIAS_FILES) $(TARG)
-
-$(ALIAS_FILES): 
-	touch $(ALIAS_FILES)
-
-CLEANFILES=$(TARG) $(ALIAS_FILES)
+-include $(top_srcdir)/git.mk

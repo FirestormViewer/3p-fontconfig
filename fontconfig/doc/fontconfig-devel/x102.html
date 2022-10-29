@@ -130,7 +130,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN255"
+NAME="AEN241"
 >FcPattern</A
 ></H2
 ><DIV
@@ -197,6 +197,11 @@ HREF="fcpatternadd-type.html"
 >&nbsp;--&nbsp;Add a typed value to a pattern</DT
 ><DT
 ><A
+HREF="fcpatterngetwithbinding.html"
+>FcPatternGetWithBinding</A
+>&nbsp;--&nbsp;Return a value with binding from a pattern</DT
+><DT
+><A
 HREF="fcpatternget.html"
 >FcPatternGet</A
 >&nbsp;--&nbsp;Return a value from a pattern</DT
@@ -257,7 +262,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN1056"
+NAME="AEN1065"
 >FcFontSet</A
 ></H2
 ><DIV
@@ -319,7 +324,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN1283"
+NAME="AEN1276"
 >FcObjectSet</A
 ></H2
 ><DIV
@@ -362,7 +367,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN1393"
+NAME="AEN1378"
 >FreeType specific functions</A
 ></H2
 ><DIV
@@ -410,7 +415,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN1522"
+NAME="AEN1497"
 >FcValue</A
 ></H2
 ><DIV
@@ -458,7 +463,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN1616"
+NAME="AEN1583"
 >FcCharSet</A
 ></H2
 ><DIV
@@ -578,7 +583,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN2118"
+NAME="AEN2050"
 >FcLangSet</A
 ></H2
 ><DIV
@@ -655,6 +660,11 @@ HREF="fcgetdefaultlangs.html"
 >&nbsp;--&nbsp;Get the default languages list</DT
 ><DT
 ><A
+HREF="fclangsetgetlangs.html"
+>FcLangSetGetLangs</A
+>&nbsp;--&nbsp;get the list of languages in the langset</DT
+><DT
+><A
 HREF="fcgetlangs.html"
 >FcGetLangs</A
 >&nbsp;--&nbsp;Get list of languages</DT
@@ -683,7 +693,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN2509"
+NAME="AEN2444"
 >FcMatrix</A
 ></H2
 ><DIV
@@ -739,7 +749,53 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN2703"
+NAME="AEN2624"
+>FcRange</A
+></H2
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="fcrangecopy.html"
+>FcRangeCopy</A
+>&nbsp;--&nbsp;Copy a range object</DT
+><DT
+><A
+HREF="fcrangecreatedouble.html"
+>FcRangeCreateDouble</A
+>&nbsp;--&nbsp;create a range object for double</DT
+><DT
+><A
+HREF="fcrangecreateinteger.html"
+>FcRangeCreateInteger</A
+>&nbsp;--&nbsp;create a range object for integer</DT
+><DT
+><A
+HREF="fcrangedestroy.html"
+>FcRangeDestroy</A
+>&nbsp;--&nbsp;destroy a range object</DT
+><DT
+><A
+HREF="fcrangegetdouble.html"
+>FcRangeGetDouble</A
+>&nbsp;--&nbsp;Get the range in double</DT
+></DL
+></DIV
+><P
+>An FcRange holds two variables to indicate a range in between.
+    </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN2752"
 >FcConfig</A
 ></H2
 ><DIV
@@ -896,6 +952,11 @@ HREF="fcconfigparseandload.html"
 >&nbsp;--&nbsp;load a configuration file</DT
 ><DT
 ><A
+HREF="fcconfigparseandloadfrommemory.html"
+>FcConfigParseAndLoadFromMemory</A
+>&nbsp;--&nbsp;load a configuration from memory</DT
+><DT
+><A
 HREF="fcconfiggetsysroot.html"
 >FcConfigGetSysRoot</A
 >&nbsp;--&nbsp;Obtain the system root directory</DT
@@ -917,7 +978,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN3460"
+NAME="AEN3480"
 >FcObjectType</A
 ></H2
 ><DIV
@@ -954,7 +1015,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN3531"
+NAME="AEN3545"
 >FcConstant</A
 ></H2
 ><DIV
@@ -995,7 +1056,38 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN3627"
+NAME="AEN3633"
+>FcWeight</A
+></H2
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="fcweightfromopentype.html"
+>FcWeightFromOpenType</A
+>&nbsp;--&nbsp;Convert from OpenType weight values to fontconfig ones</DT
+><DT
+><A
+HREF="fcweighttoopentype.html"
+>FcWeightToOpenType</A
+>&nbsp;--&nbsp;Convert from fontconfig weight values to OpenType ones</DT
+></DL
+></DIV
+><P
+>Maps weights to and from OpenType weights.
+    </P
+></DIV
+><DIV
+CLASS="SECT2"
+><H2
+CLASS="SECT2"
+><A
+NAME="AEN3683"
 >FcBlanks</A
 ></H2
 ><DIV
@@ -1040,7 +1132,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN3718"
+NAME="AEN3766"
 >FcAtomic</A
 ></H2
 ><DIV
@@ -1103,7 +1195,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN3895"
+NAME="AEN3927"
 >File and Directory routines</A
 ></H2
 ><DIV
@@ -1155,6 +1247,11 @@ HREF="fcdircacheload.html"
 >&nbsp;--&nbsp;load a directory cache</DT
 ><DT
 ><A
+HREF="fcdircacherescan.html"
+>FcDirCacheRescan</A
+>&nbsp;--&nbsp;Re-scan a directory cache</DT
+><DT
+><A
 HREF="fcdircacheread.html"
 >FcDirCacheRead</A
 >&nbsp;--&nbsp;read or construct a directory cache</DT
@@ -1180,7 +1277,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN4168"
+NAME="AEN4205"
 >FcCache routines</A
 ></H2
 ><DIV
@@ -1269,7 +1366,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN4333"
+NAME="AEN4362"
 >FcStrSet and FcStrList</A
 ></H2
 ><DIV
@@ -1346,7 +1443,7 @@ CLASS="SECT2"
 ><H2
 CLASS="SECT2"
 ><A
-NAME="AEN4593"
+NAME="AEN4603"
 >String utilities</A
 ></H2
 ><DIV
